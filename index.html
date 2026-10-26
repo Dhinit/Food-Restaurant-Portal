@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Home | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg">
+<header class="wrap hero">
+ <div>
+  <span class="tag">Chef · Food Storyteller · Recipe Developer</span>
+  <h1>Taste the world,<br><span class="grad">one plate at a time.</span></h1>
+  <p class="sub">Recipes, tastings and food stories from a kitchen that never sits still. Pick how you'd like your food below and start exploring.</p>
+  <div class="row"><a class="btn" href="menu.html">Explore the menu →</a></div>
+  <div class="stats"><div><strong data-n="37">0</strong><span>Signature dishes</span></div><div><strong data-n="14">0</strong><span>Cuisines</span></div><div><strong data-n="1200">0</strong><span>Plates served</span></div></div>
+ </div>
+ <div class="plate" aria-hidden="true"><div class="main">🍛</div>
+  <i style="top:2%;left:8%">🍕</i><i style="top:10%;right:2%;animation-delay:-1s">🍣</i><i style="bottom:12%;left:-2%;animation-delay:-2s">🌮</i><i style="bottom:0;right:10%;animation-delay:-3s">🍰</i></div>
+</header>
+<section id="modes" style="padding-top:1rem"><div class="wrap"><h2>How would you like it <span class="grad">today?</span></h2>
+ <p class="lead">Choose once. We'll remember it on the menu and at checkout, and you can change it any time.</p>
+ <div class="modes rv"><a class="mode" data-m="delivery" style="--a:#2f8bff;--b:#22d3ee" href="menu.html"><em>🚚</em><h3>Delivery</h3><p>Hot to your door in 35 to 45 minutes. Free above ₹500.</p><span class="pk">✓ Selected</span><span class="go">Start ordering →</span></a><a class="mode" data-m="takeaway" style="--a:#ff6b35;--b:#ff2e7e" href="menu.html"><em>🛍️</em><h3>Takeaway</h3><p>Order ahead and pick it up in about 20 minutes.</p><span class="pk">✓ Selected</span><span class="go">Start ordering →</span></a><a class="mode" data-m="dinein" style="--a:#8b5cf6;--b:#ff6a88" href="book.html"><em>🍽️</em><h3>Dine-in</h3><p>Book a table and pre-order your dishes.</p><span class="pk">✓ Selected</span><span class="go">Start ordering →</span></a></div></div></section>
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+<section><div class="wrap"><h2>Browse by <span class="grad">course</span></h2><p class="lead">Jump straight to what you're craving.</p>
+ <div class="tiles rv"><a class="tile2" href="menu.html?c=Breakfast" style="--a:#ffb347;--b:#ff5e62"><em>🍳</em>Breakfast</a><a class="tile2" href="menu.html?c=Starter" style="--a:#56ccf2;--b:#2f80ed"><em>🥟</em>Starters</a><a class="tile2" href="menu.html?c=Main" style="--a:#f12711;--b:#f5af19"><em>🍛</em>Mains</a><a class="tile2" href="menu.html?c=Snack" style="--a:#11998e;--b:#38ef7d"><em>🌮</em>Snacks</a><a class="tile2" href="menu.html?c=Dessert" style="--a:#8e2de2;--b:#ff6a88"><em>🍰</em>Desserts</a><a class="tile2" href="menu.html?c=Drink" style="--a:#f9d423;--b:#ff4e50"><em>🥤</em>Drinks</a></div></div></section>
+<section><div class="wrap"><h2>Fan <span class="grad">favourites</span></h2><p class="lead">A fresh pick of dishes every time you visit.</p>
+ <div class="grid" id="feat"></div><div class="more"><button class="btn ghost" id="shuf">🔀 Show me different dishes</button></div></div></section>
+<section><div class="wrap"><div class="special rv" id="special"></div></div></section>
+<section><div class="wrap"><h2>How I <span class="grad">cook</span></h2><p class="lead">The principles behind every plate. Open one to learn more. <a class="link" href="cook.html">See all →</a></p><div class="tcs rv" id="ck"></div></div></section>
+<section><div class="wrap"><h2>Kind <span class="grad">words</span></h2><p class="lead">What guests say about us. <a class="link" href="reviews.html">Read all and write yours →</a></p>
+ <div class="quotes rv" id="quotes"><blockquote><p>The biryani was the best I've had outside my grandmother's kitchen.</p><cite><b>Aarav M.</b>Private dinner host</cite></blockquote>
+ <blockquote><p>Beautiful plating and even better flavour. Our pop-up sold out in two hours.</p><cite><b>Sofia R.</b>Café owner</cite></blockquote>
+ <blockquote><p>Professional, creative and on time. The recipe shoot looked incredible.</p><cite><b>Kenji T.</b>Magazine editor</cite></blockquote></div></div></section>
+<section><div class="wrap"><h2>Good to <span class="grad">know</span></h2><p class="lead">Everything about booking, ordering and the menu. <a class="link" href="faq.html">See all →</a></p><div class="tcs rv" id="kn"></div></div></section></main><script src="site.js"></script><script>
+const shuf=a=>[...a].sort(()=>Math.random()-.5);let ds=[];
+function fav(){$("#feat").innerHTML=shuf(ds).slice(0,6).map(cardHTML).join("");watch()}
+getDishes().then(x=>{ds=x;$("#mq").innerHTML=(a=>[...a,...a])(shuf(ds)).map(d=>`<span>${d.emoji} ${esc(d.name)}</span>`).join("");fav();
+ const d=ds[Math.floor(Date.now()/864e5)%ds.length];
+ $("#special").innerHTML=`<div>${art(d)}</div><div><span class="tag">⭐ Chef's special today</span><h2 style="margin-top:.8rem">${esc(d.name)}</h2><p class="lead">${esc(d.story)}</p><div class="price">₹${d.price}</div><div class="ext"><a class="btn" href="dish.html?id=${d.id}">See the recipe →</a><button class="btn blue" id="sp">🛒 Add to cart</button></div></div>`;
+ $("#sp").onclick=()=>{addCart(d.id);toast("Added to cart 🛒")};watch()});
+$("#shuf").onclick=fav;
+let cur="";try{cur=localStorage.getItem("otype")||""}catch{}
+document.querySelectorAll(".mode[data-m]").forEach(a=>{a.classList.toggle("sel",a.dataset.m===cur);a.onclick=()=>{try{localStorage.setItem("otype",a.dataset.m)}catch{}}});
+fetch("/api/content").then(r=>r.json()).then(C=>{$("#ck").innerHTML=C.cook.slice(0,4).map(t=>tc("cook",t)).join("");$("#kn").innerHTML=C.know.map(t=>tc("know",t)).join("");watch()});
+fetch("/api/reviews/latest").then(r=>r.json()).then(l=>{if(l.length)$("#quotes").innerHTML=l.map(r=>`<blockquote><p>${esc(r.comment)}</p><cite><b>${esc(r.name)}</b><span class="stars">${"★".repeat(r.rating)}</span> on ${esc(r.dishName)}</cite></blockquote>`).join("")}).catch(()=>{});</script></body></html>

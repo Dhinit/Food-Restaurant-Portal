@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cart | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph"><h1>Your <span class="grad">cart</span></h1><div class="two" style="margin-top:1.5rem">
+ <div><div id="items"></div>
+  <div class="panel" id="cp" hidden style="margin-top:1rem"><form id="cf" class="nl" novalidate><input name="code" placeholder="Coupon code (try FLAVOUR10)" aria-label="Coupon code" style="margin:0"><button class="btn blue sm" type="submit">Apply</button></form>
+   <div class="sum" id="sum" style="margin-top:1rem"></div></div></div>
+ <div class="panel" id="co" hidden><h2>Checkout</h2>
+  <div class="modechip" id="chip" hidden></div>
+  <div class="seg" id="seg" role="group" aria-label="Order type"><button type="button" data-t="delivery">🚚 Delivery<small>35 to 45 min</small></button><button type="button" data-t="takeaway">🛍️ Takeaway<small>about 20 min</small></button><button type="button" data-t="dinein">🍽️ Dine-in<small>at your table</small></button></div>
+  <div class="est" id="est"></div>
+  <form id="of" novalidate><label>Name<input name="name" autocomplete="name" required></label>
+  <div class="fr"><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Phone<input name="phone" type="tel" autocomplete="tel" required></label></div>
+  <label id="f-del">Delivery address<textarea name="address" autocomplete="street-address"></textarea></label>
+  <label id="f-take" hidden>Pickup time<select name="pickup"><option>As soon as possible (about 20 min)</option><option>In 30 minutes</option><option>In 1 hour</option><option>In 2 hours</option></select></label>
+  <div class="fr" id="f-dine" hidden><label>Guests<select name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select></label><label>Booking ref (optional)<input name="bookingRef" placeholder="FL-XXXXX"></label></div>
+  <label>Payment<select name="payment"><option>Cash on delivery / at counter</option><option>UPI on delivery / at counter</option><option>Card at counter</option></select></label>
+  <label>Notes<input name="note" placeholder="Allergies, spice level, etc."></label>
+  <button class="btn" type="submit">Place order</button><p class="status" id="os" role="status"></p></form></div></div>
+ <div class="done" id="done" hidden></div>
+ <div class="panel" style="margin-top:2rem;max-width:560px"><h2>Track an order</h2><form id="tf" novalidate style="margin-top:1rem"><div class="fr"><label>Order reference<input name="ref" placeholder="ORD-XXXXX" required></label><label>Email<input name="email" type="email" required></label></div>
+  <button class="btn blue" type="submit">Track</button><p class="status" id="ts" role="status"></p></form></div></div></main><script src="site.js"></script><script>
+let ds=[],coupon="",Q=null,type="";try{type=localStorage.getItem("otype")||""}catch{}
+const asked=["delivery","takeaway","dinein"].includes(type);if(!asked)type="delivery";
+const EST={delivery:"🚚 Estimated delivery: 35 to 45 minutes",takeaway:"🛍️ Ready for pickup in about 20 minutes",dinein:"🍽️ Served fresh at your table. Add your booking reference if you have one."};
+async function quote(){const items=Object.entries(cart).map(([id,qty])=>({id,qty}));try{Q=await post("/api/quote",{items,coupon,type})}catch{Q=null}}
+function setType(t){type=t;try{localStorage.setItem("otype",t)}catch{}
+ document.querySelectorAll("#seg button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
+ const MI={delivery:["🚚","Delivery"],takeaway:["🛍️","Takeaway"],dinein:["🍽️","Dine-in"]};$("#seg").hidden=asked;$("#chip").hidden=!asked;$("#chip").innerHTML=MI[t][0]+" "+MI[t][1]+' order · <a class="link" href="index.html#modes">Change</a>';$("#f-del").hidden=t!=="delivery";$("#f-take").hidden=t!=="takeaway";$("#f-dine").hidden=t!=="dinein";$("#est").textContent=EST[t];draw()}
+async function draw(){const ids=Object.keys(cart).filter(id=>ds.some(d=>d.id===id));
+ if(!ids.length){let last={};try{last=JSON.parse(localStorage.getItem("last")||"{}")}catch{}
+  $("#items").innerHTML='<p class="lead">Your cart is empty. <a class="link" href="menu.html">Browse the menu →</a></p>'+(Object.keys(last).length?'<button class="btn blue" id="again">↻ Order the same again</button>':"");
+  if($("#again"))$("#again").onclick=()=>{cart=last;saveCart();draw();toast("Previous order added 🛒")};$("#co").hidden=true;$("#cp").hidden=true;return}
+ await quote();
+ $("#items").innerHTML=ids.map(id=>{const d=ds.find(x=>x.id===id),q=cart[id];
+  return `<div class="row2"><span class="em">${d.emoji}</span><div class="grow"><b>${esc(d.name)}</b><br><small class="mut">₹${d.price} each</small></div>
+  <span class="qty"><button data-a="-" data-id="${id}" aria-label="Less">−</button><b>${q}</b><button data-a="+" data-id="${id}" aria-label="More">+</button></span><b>₹${d.price*q}</b></div>`}).join("");
+ $("#co").hidden=false;$("#cp").hidden=false;
+ if(Q)$("#sum").innerHTML=`<div><span>Subtotal</span><span>₹${Q.subtotal}</span></div>${Q.discount?`<div><span>Coupon ${esc(Q.coupon)}</span><span>−₹${Q.discount}</span></div>`:""}${type==="delivery"?`<div><span>Delivery</span><span>${Q.fee?"₹"+Q.fee:"Free"}</span></div>`:""}<div class="t"><span>Total</span><span>₹${Q.total}</span></div>${type==="delivery"&&Q.subtotal<500?`<p class="mut" style="margin-top:.6rem">Add ₹${500-Q.subtotal} more for free delivery</p>`:""}`}
+$("#items").onclick=e=>{const b=e.target.closest("[data-a]");if(!b)return;addCart(b.dataset.id,b.dataset.a==="+"?1:-1);draw()};
+$("#seg").onclick=e=>{const b=e.target.closest("button");if(b)setType(b.dataset.t)};
+$("#cf").onsubmit=async e=>{e.preventDefault();coupon=new FormData(e.target).get("code").trim();await draw();toast(Q&&Q.msg?Q.msg:"Coupon cleared")};
+$("#of").onsubmit=async e=>{e.preventDefault();const s=$("#os");s.className="status";
+ try{const items=Object.entries(cart).map(([id,qty])=>({id,qty}));const r=await post("/api/orders",{...Object.fromEntries(new FormData(e.target)),type,coupon,items});
+  try{localStorage.setItem("last",JSON.stringify(cart))}catch{}
+  cart={};saveCart();coupon="";draw();$("#done").hidden=false;$("#done").innerHTML=`<p>Order placed. Thank you!</p><b>${r.ref}</b><p style="margin-top:.5rem">Total ₹${r.total} · ${r.type==="delivery"?"Delivery":r.type==="takeaway"?"Takeaway":"Dine-in"}. Save this reference to track your order below.</p><p style="margin-top:.6rem"><a class="link" href="reviews.html?ref=${r.ref}">⭐ Rate your experience →</a></p>`;e.target.reset();s.textContent="";scrollTo({top:0,behavior:"smooth"})}
+ catch(x){s.className="status err";s.textContent=x.message}};
+$("#tf").onsubmit=async e=>{e.preventDefault();const s=$("#ts"),f=Object.fromEntries(new FormData(e.target));
+ try{const r=await(await fetch("/api/orders/lookup?ref="+encodeURIComponent(f.ref)+"&email="+encodeURIComponent(f.email))).json();if(r.error)throw new Error(r.error);
+  s.className="status ok";s.innerHTML=`${esc(r.ref)} (${esc(r.type||"delivery")}): ${r.items} item(s), ₹${r.total}. Status: <b>${esc(r.status.toUpperCase())}</b> · <a class="link" href="reviews.html?ref=${encodeURIComponent(r.ref)}&email=${encodeURIComponent(f.email)}">Rate it →</a>`}
+ catch(x){s.className="status err";s.textContent=x.message}};
+autofill("#of");getDishes().then(x=>{ds=x;setType(type)});</script></body></html>

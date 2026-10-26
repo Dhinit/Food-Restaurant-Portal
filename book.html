@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Book a table | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph"><h1>Book a <span class="grad">table</span></h1><p class="lead">Pick a date and a time slot. You get a booking reference straight away, and I confirm by email.</p>
+ <div class="two"><div class="panel"><form id="bf" novalidate>
+  <div class="fr"><label>Name<input name="name" autocomplete="name" required></label><label>Phone<input name="phone" type="tel" autocomplete="tel"></label></div>
+  <label>Email<input name="email" type="email" autocomplete="email" required></label>
+  <div class="fr"><label>Date<input name="date" type="date" id="dt" required></label><label>Guests<select name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option></select></label></div>
+  <div><b>Time slot</b><div class="slots" id="slots" style="margin-top:.5rem"></div></div>
+  <div><b>Pre-order food (optional)</b><p class="mut" style="font-size:.9rem">Choose dishes so they're ready when you arrive.</p>
+  <input id="pq" type="search" placeholder="Search dishes..." aria-label="Search dishes" style="margin:.4rem 0"><div class="pick" id="pick"></div><div class="mut" id="psum" style="margin-top:.4rem;font-weight:600"></div></div>
+  <label>Occasion<select name="occasion"><option>Casual meal</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Private tasting</option></select></label>
+  <label>Notes (allergies, seating)<textarea name="note"></textarea></label>
+  <button class="btn" type="submit">Request booking</button><p class="status" id="bs" role="status"></p></form>
+  <div class="done" id="done" hidden></div></div>
+ <div class="panel"><h2>Check my booking</h2><p class="lead" style="margin:.4rem 0 1rem">Enter your reference and email.</p><form id="lf" novalidate>
+  <label>Reference<input name="ref" placeholder="FL-XXXXX" required></label><label>Email<input name="email" type="email" required></label>
+  <button class="btn blue" type="submit">Check status</button><p class="status" id="ls" role="status"></p></form></div></div></div></main><script src="site.js"></script><script>
+const dt=$("#dt"),today=new Date().toISOString().slice(0,10);dt.min=today;dt.value=today;let time="";
+async function slots(){time="";const s=await(await fetch("/api/slots?date="+dt.value)).json();
+ $("#slots").innerHTML=Array.isArray(s)?s.map(x=>`<button type="button" class="slot" data-t="${x.time}" ${x.left?"":"disabled"}>${x.time}<small>${x.left?x.left+" left":"Full"}</small></button>`).join(""):"<p class='mut'>Pick a valid date.</p>"}
+$("#slots").onclick=e=>{const b=e.target.closest(".slot");if(!b||b.disabled)return;time=b.dataset.t;document.querySelectorAll(".slot").forEach(x=>x.classList.toggle("sel",x===b))};
+dt.onchange=slots;slots();
+$("#bf").onsubmit=async e=>{e.preventDefault();const s=$("#bs");s.className="status";
+ if(!time){s.className="status err";s.textContent="Please choose a time slot.";return}
+ try{const r=await post("/api/bookings",{...Object.fromEntries(new FormData(e.target)),time,items:Object.entries(pre).map(([id,qty])=>({id,qty}))});s.textContent="";
+  $("#done").hidden=false;$("#done").innerHTML=`<p>Booking requested!</p><b>${r.ref}</b><p style="margin-top:.5rem">${r.date} at ${r.time} · ${r.guests} guest(s).${r.preTotal?" Pre-order ₹"+r.preTotal+".":""} Save this reference to check your status.</p>`;e.target.reset();dt.value=today;slots();pre={};pdraw();toast("Table requested 🎉")}
+ catch(x){s.className="status err";s.textContent=x.message}};
+$("#lf").onsubmit=async e=>{e.preventDefault();const s=$("#ls"),f=Object.fromEntries(new FormData(e.target));
+ try{const r=await(await fetch("/api/bookings/lookup?ref="+encodeURIComponent(f.ref)+"&email="+encodeURIComponent(f.email))).json();if(r.error)throw new Error(r.error);
+  s.className="status ok";s.textContent=`${r.ref}: ${r.date} at ${r.time}, ${r.guests} guest(s). ${(r.items&&r.items.length)?"Pre-order: "+r.items.map(i=>i.qty+"× "+i.name).join(", ")+". ":""}Status: ${r.status.toUpperCase()}`}
+ catch(x){s.className="status err";s.textContent=x.message}};
+let pre={},pds=[];
+function pdraw(){const q=$("#pq").value.toLowerCase();
+ $("#pick").innerHTML=pds.filter(d=>!q||d.name.toLowerCase().includes(q)).map(d=>`<div class="prow"><span>${d.emoji}</span><span class="grow">${esc(d.name)} <small>₹${d.price}</small></span><span class="qty"><button type="button" data-p="-" data-id="${d.id}" aria-label="Less">−</button><b>${pre[d.id]||0}</b><button type="button" data-p="+" data-id="${d.id}" aria-label="More">+</button></span></div>`).join("");
+ const ids=Object.keys(pre),t=ids.reduce((s,id)=>s+pre[id]*pds.find(d=>d.id===id).price,0);$("#psum").textContent=ids.length?"🍽 "+ids.reduce((s,i)=>s+pre[i],0)+" item(s) pre-ordered · ₹"+t:""}
+$("#pick").onclick=e=>{const x=e.target.closest("[data-p]");if(!x)return;const id=x.dataset.id;pre[id]=Math.max(0,Math.min(10,(pre[id]||0)+(x.dataset.p==="+"?1:-1)));if(!pre[id])delete pre[id];pdraw()};
+$("#pq").oninput=pdraw;getDishes().then(x=>{pds=x;pdraw()});autofill("#bf");autofill("#lf");
+</script></body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dish | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap" id="dish"></div></main><script src="site.js"></script><script>
+(async()=>{const id=new URLSearchParams(location.search).get("id");const el=$("#dish");let d;
+ try{const ds=await getDishes();d=ds.find(x=>x.id===id);if(!d)throw 0;
+ document.title=d.name+" | Flavour Lab";
+ const yt="https://www.youtube.com/results?search_query="+encodeURIComponent(d.name+" recipe");
+ const mp="https://www.google.com/maps/search/"+encodeURIComponent(d.name+" restaurant near me");
+ const rel=ds.filter(x=>x.category===d.category&&x.id!==d.id).slice(0,3);
+ el.innerHTML=`<div class="dp"><div>${art(d)}</div><div>
+  <a class="crumb" href="menu.html">← Back to menu</a><br><span class="tag">${esc(d.origin)} · ${esc(d.category)} · ⏱ ${esc(d.time)}${d.spice?" · "+"🌶".repeat(d.spice):""} · ${d.diet==="veg"?"🟢 Veg":d.diet==="egg"?"🟡 Contains egg":"🔴 Non-veg"}</span>
+  <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">${esc(d.name)}</h1><div id="avg" class="stars"></div>
+  <p style="color:var(--mut);margin:1rem 0">${esc(d.story)}</p><div class="price">₹${d.price}</div>
+  <div class="ext"><span class="qty"><button id="mi" aria-label="Less">−</button><b id="qn">1</b><button id="pl" aria-label="More">+</button></span>
+   <button class="btn blue" id="add">🛒 Add to cart</button><button class="btn ghost" id="fav">${favs.has(d.id)?"♥ Saved":"♡ Save"}</button><button class="btn ghost" id="sh">🔗 Share</button><button class="btn ghost" onclick="print()">🖨 Print</button></div>
+  <h3>Ingredients</h3><div class="pills">${d.ingredients.map(i=>`<a href="ingredients.html?i=${encodeURIComponent(i)}"><span>${esc(i)}</span></a>`).join("")}</div>
+  <h3 style="margin-top:1.2rem">Method</h3><ol class="steps">${d.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+  <p class="tip"><b>Chef's tip:</b> ${esc(d.tip)}</p>
+  <div class="ext"><a class="btn ghost" href="${yt}" target="_blank" rel="noopener">▶ Watch recipes on YouTube ↗</a><a class="btn ghost" href="${mp}" target="_blank" rel="noopener">📍 Find nearby ↗</a></div></div></div>
+  <div class="two"><div><h2>Reviews</h2><div id="revs"></div></div>
+  <div class="panel"><h3>Leave a review</h3><form id="rf" novalidate style="margin-top:.8rem"><label>Name<input name="name" required></label>
+   <div><b>Your rating</b><div class="sp" id="sp1"></div></div>
+   <label>Comment<textarea name="comment" required></textarea></label><button class="btn" type="submit">Post review</button><p class="status" role="status"></p></form></div></div>
+  ${rel.length?`<h2 style="margin:3rem 0 1rem">More <span class="grad">${esc(d.category)}</span></h2><div class="grid">${rel.map(cardHTML).join("")}</div>`:""}`;
+ let n=1;$("#mi").onclick=()=>{n=Math.max(1,n-1);$("#qn").textContent=n};$("#pl").onclick=()=>{n=Math.min(20,n+1);$("#qn").textContent=n};
+ $("#add").onclick=()=>{addCart(d.id,n);toast("Added to cart 🛒");$("#add").textContent="✓ Added ("+n+")";setTimeout(()=>$("#add").textContent="🛒 Add to cart",1600)};
+ $("#fav").onclick=()=>{toggleFav(d.id);$("#fav").textContent=favs.has(d.id)?"♥ Saved":"♡ Save"};
+ const loadRevs=async()=>{const j=await(await fetch("/api/reviews?dish="+d.id)).json();
+  $("#avg").textContent=j.count?"★".repeat(Math.round(j.avg))+" "+j.avg.toFixed(1)+" ("+j.count+")":"";
+  $("#revs").innerHTML=j.list.length?j.list.map(r=>`<div class="rev"><span class="stars">${"★".repeat(r.rating)}</span> <b>${esc(r.name)}</b><p>${esc(r.comment)}</p></div>`).join(""):'<p class="lead">No reviews yet. Be the first!</p>'};
+ loadRevs();
+ stars($("#sp1"),5);autofill("#rf");$("#rf").onsubmit=async e=>{e.preventDefault();const s=e.target.querySelector(".status");try{await post("/api/reviews",{...Object.fromEntries(new FormData(e.target)),dish:d.id});s.className="status ok";s.textContent="Thanks for your review!";e.target.reset();stars($("#sp1"),5);loadRevs();toast("Thanks for your review! ⭐")}catch(x){s.className="status err";s.textContent=x.message}};
+ $("#sh").onclick=async()=>{try{if(navigator.share)await navigator.share({title:d.name,url:location.href});else{await navigator.clipboard.writeText(location.href);toast("Link copied 🔗")}}catch{}};
+ watch();
+ }catch{el.innerHTML='<div class="ph"><h1>Dish not found</h1><p class="lead">Try the <a class="link" href="menu.html">full menu</a>.</p></div>'}})();</script></body></html>

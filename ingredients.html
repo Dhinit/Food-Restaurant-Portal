@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ingredients | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph"><h1>Cook with <span class="grad">what you have</span></h1><p class="lead">Tap the ingredients in your kitchen. I'll show the dishes you can make, best matches first.</p>
+ <input id="iq" type="search" placeholder="Filter ingredients..." aria-label="Filter ingredients" style="max-width:340px;margin-bottom:1rem;width:100%">
+ <div id="chips"></div><h2 id="rt" style="margin:2.5rem 0 1rem"></h2><div class="grid" id="grid"></div></div></main><script src="site.js"></script><script>
+let ds=[],sel=new Set(),all=[];
+const pre=new URLSearchParams(location.search).get("i");if(pre)sel.add(pre);
+function chips(){const q=$("#iq").value.toLowerCase();
+ $("#chips").innerHTML=all.filter(([n])=>n.toLowerCase().includes(q)).map(([n,c])=>`<button class="ichip ${sel.has(n)?"sel":""}" data-n="${esc(n)}">${esc(n)}<small>${c}</small></button>`).join("")}
+function show(){const S=[...sel];
+ if(!S.length){$("#rt").textContent="";$("#grid").innerHTML='<p class="lead">Select one or more ingredients above.</p>';return}
+ const m=ds.map(d=>({d,h:S.filter(i=>d.ingredients.includes(i)).length})).filter(x=>x.h).sort((a,b)=>b.h-a.h);
+ $("#rt").innerHTML=m.length?`${m.length} dish${m.length>1?"es":""} you can make <span class="grad">(${S.length} selected)</span>`:"No dish uses those ingredients";
+ $("#grid").innerHTML=m.map(x=>cardHTML(x.d)).join("");watch()}
+$("#chips").onclick=e=>{const b=e.target.closest(".ichip");if(!b)return;const n=b.dataset.n;sel.has(n)?sel.delete(n):sel.add(n);chips();show()};
+$("#iq").oninput=chips;
+getDishes().then(x=>{ds=x;const m={};x.forEach(d=>d.ingredients.forEach(i=>m[i]=(m[i]||0)+1));all=Object.entries(m).sort((a,b)=>a[0].localeCompare(b[0]));chips();show()});</script></body></html>

@@ -1,0 +1,1123 @@
+[
+ {
+  "id": "croissant",
+  "name": "Butter Croissant",
+  "category": "Breakfast",
+  "origin": "France",
+  "emoji": "🥐",
+  "c1": "#ff9a3c",
+  "c2": "#ff5e62",
+  "time": "3 hrs",
+  "price": 180,
+  "wiki": "Croissant",
+  "story": "Laminated dough folded with cold butter into dozens of flaky layers, baked until crisp outside and honeycomb-soft inside.",
+  "ingredients": [
+   "Bread flour",
+   "Cultured butter",
+   "Instant yeast",
+   "Whole milk",
+   "Sugar",
+   "Sea salt",
+   "Egg wash"
+  ],
+  "steps": [
+   "Fold cold butter into the dough in three turns, chilling between each.",
+   "Roll out, cut triangles and shape into crescents.",
+   "Proof until puffy, then bake at 200°C until deep golden."
+  ],
+  "tip": "Keep the butter cold at every fold.",
+  "diet": "egg",
+  "spice": 0
+ },
+ {
+  "id": "pancakes",
+  "name": "Fluffy Pancakes",
+  "category": "Breakfast",
+  "origin": "USA",
+  "emoji": "🥞",
+  "c1": "#f7b733",
+  "c2": "#fc4a1a",
+  "time": "20 min",
+  "price": 240,
+  "wiki": "Pancake",
+  "story": "A tall stack of buttermilk pancakes with golden edges and soft centres, finished with maple syrup and butter.",
+  "ingredients": [
+   "Buttermilk",
+   "Flour",
+   "Eggs",
+   "Baking powder",
+   "Butter",
+   "Maple syrup",
+   "Vanilla"
+  ],
+  "steps": [
+   "Whisk buttermilk, eggs and melted butter, then fold into the dry mix.",
+   "Ladle onto a buttered pan over medium heat.",
+   "Flip when bubbles form and serve with maple syrup."
+  ],
+  "tip": "Rest the batter 10 minutes and don't overmix.",
+  "diet": "egg",
+  "spice": 0,
+  "meal": "Pancakes"
+ },
+ {
+  "id": "masala-dosa",
+  "name": "Masala Dosa",
+  "category": "Breakfast",
+  "origin": "India",
+  "emoji": "🫓",
+  "c1": "#f6d365",
+  "c2": "#fda085",
+  "time": "45 min",
+  "price": 160,
+  "wiki": "Dosa",
+  "story": "A crisp fermented rice-and-lentil crepe folded around a spiced potato filling, served with coconut chutney and sambar.",
+  "ingredients": [
+   "Dosa batter",
+   "Potatoes",
+   "Onion",
+   "Mustard seeds",
+   "Curry leaves",
+   "Turmeric",
+   "Ghee"
+  ],
+  "steps": [
+   "Spread fermented batter thin on a hot griddle.",
+   "Cook the potato masala with mustard seeds, onion and turmeric.",
+   "Fill, fold and serve with chutney and sambar."
+  ],
+  "tip": "Keep the griddle hot and lightly oiled.",
+  "diet": "veg",
+  "spice": 1
+ },
+ {
+  "id": "shakshuka",
+  "name": "Shakshuka",
+  "category": "Breakfast",
+  "origin": "Middle East",
+  "emoji": "🍳",
+  "c1": "#ff416c",
+  "c2": "#ff4b2b",
+  "time": "30 min",
+  "price": 260,
+  "wiki": "Shakshouka",
+  "story": "Eggs poached in a smoky, spiced tomato and pepper sauce, mopped up with warm bread.",
+  "ingredients": [
+   "Eggs",
+   "Tomatoes",
+   "Red pepper",
+   "Onion",
+   "Garlic",
+   "Cumin",
+   "Paprika"
+  ],
+  "steps": [
+   "Soften onion and pepper, add garlic and spices.",
+   "Add tomatoes and simmer into a thick sauce.",
+   "Crack in eggs, cover and cook until just set."
+  ],
+  "tip": "Pull it off the heat while the yolks are still soft.",
+  "diet": "egg",
+  "spice": 2,
+  "meal": "Shakshuka"
+ },
+ {
+  "id": "samosa",
+  "name": "Punjabi Samosa",
+  "category": "Starter",
+  "origin": "India",
+  "emoji": "🥟",
+  "c1": "#e8a317",
+  "c2": "#c56a1a",
+  "time": "50 min",
+  "price": 120,
+  "wiki": "Samosa",
+  "story": "Crisp, flaky pastry parcels stuffed with spiced potato and peas, fried until golden.",
+  "ingredients": [
+   "Flour",
+   "Potatoes",
+   "Green peas",
+   "Cumin",
+   "Coriander seeds",
+   "Green chilli",
+   "Oil"
+  ],
+  "steps": [
+   "Make a firm dough with flour, oil and salt.",
+   "Cook the spiced potato and pea filling.",
+   "Shape cones, fill, seal and fry on low heat."
+  ],
+  "tip": "Fry slowly so the crust blisters and stays crisp.",
+  "diet": "veg",
+  "spice": 2
+ },
+ {
+  "id": "bruschetta",
+  "name": "Tomato Bruschetta",
+  "category": "Starter",
+  "origin": "Italy",
+  "emoji": "🍅",
+  "c1": "#fb5b5b",
+  "c2": "#7bc74d",
+  "time": "15 min",
+  "price": 220,
+  "wiki": "Bruschetta",
+  "story": "Grilled rustic bread rubbed with garlic and topped with juicy tomatoes, basil and olive oil.",
+  "ingredients": [
+   "Ciabatta",
+   "Ripe tomatoes",
+   "Garlic",
+   "Basil",
+   "Olive oil",
+   "Balsamic",
+   "Sea salt"
+  ],
+  "steps": [
+   "Grill thick slices of bread until charred.",
+   "Rub with a cut garlic clove.",
+   "Top with tomatoes, basil, oil and salt."
+  ],
+  "tip": "Salt the tomatoes 10 minutes before serving.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "pizza",
+  "name": "Wood-fired Margherita",
+  "category": "Main",
+  "origin": "Italy",
+  "emoji": "🍕",
+  "c1": "#ff512f",
+  "c2": "#f09819",
+  "time": "25 min",
+  "price": 420,
+  "wiki": "Pizza",
+  "story": "Slow-fermented dough, San Marzano tomatoes, fresh mozzarella and basil, blistered in a very hot oven.",
+  "ingredients": [
+   "00 flour",
+   "San Marzano tomatoes",
+   "Mozzarella",
+   "Basil",
+   "Olive oil",
+   "Yeast",
+   "Sea salt"
+  ],
+  "steps": [
+   "Stretch rested dough by hand into a thin round.",
+   "Top with crushed tomato, torn mozzarella and olive oil.",
+   "Bake very hot until blistered, then add basil."
+  ],
+  "tip": "Go as hot as your oven allows.",
+  "diet": "veg",
+  "spice": 0,
+  "meal": "Pizza"
+ },
+ {
+  "id": "sushi",
+  "name": "Salmon Nigiri Platter",
+  "category": "Main",
+  "origin": "Japan",
+  "emoji": "🍣",
+  "c1": "#2f8bff",
+  "c2": "#ff6a88",
+  "time": "40 min",
+  "price": 650,
+  "wiki": "Sushi",
+  "story": "Silky salmon over lightly vinegared rice, brushed with soy and finished with a touch of wasabi.",
+  "ingredients": [
+   "Sushi rice",
+   "Fresh salmon",
+   "Rice vinegar",
+   "Wasabi",
+   "Soy sauce",
+   "Nori",
+   "Pickled ginger"
+  ],
+  "steps": [
+   "Cook sushi rice and season with rice vinegar while warm.",
+   "Shape small oval rice pieces with wet hands.",
+   "Top with sliced salmon and a dot of wasabi."
+  ],
+  "tip": "Wet your hands so the rice doesn't stick.",
+  "diet": "nonveg",
+  "spice": 0
+ },
+ {
+  "id": "biryani",
+  "name": "Dum Biryani",
+  "category": "Main",
+  "origin": "India",
+  "emoji": "🍛",
+  "c1": "#f12711",
+  "c2": "#f5af19",
+  "time": "90 min",
+  "price": 380,
+  "wiki": "Biryani",
+  "story": "Fragrant basmati layered with marinated meat, fried onions, saffron and mint, slow-cooked on dum.",
+  "ingredients": [
+   "Basmati rice",
+   "Chicken or mutton",
+   "Yoghurt",
+   "Saffron",
+   "Fried onions",
+   "Mint",
+   "Whole spices"
+  ],
+  "steps": [
+   "Marinate meat with yoghurt and spices for 2 hours.",
+   "Par-boil the rice, then layer with meat, onions and saffron milk.",
+   "Seal the pot and cook on low heat for 40 minutes."
+  ],
+  "tip": "Seal the pot with dough to trap the steam.",
+  "diet": "nonveg",
+  "spice": 2,
+  "meal": "Biryani"
+ },
+ {
+  "id": "butter-chicken",
+  "name": "Butter Chicken",
+  "category": "Main",
+  "origin": "India",
+  "emoji": "🍗",
+  "c1": "#ff7e29",
+  "c2": "#c81d25",
+  "time": "60 min",
+  "price": 450,
+  "wiki": "Butter chicken",
+  "story": "Tender tandoori-style chicken simmered in a silky tomato, butter and cream sauce.",
+  "ingredients": [
+   "Chicken thighs",
+   "Tomato puree",
+   "Butter",
+   "Cream",
+   "Kashmiri chilli",
+   "Garam masala",
+   "Kasuri methi"
+  ],
+  "steps": [
+   "Marinate chicken in yoghurt and spices, then grill.",
+   "Simmer tomato puree with butter and spices.",
+   "Add chicken and cream, finish with dried fenugreek."
+  ],
+  "tip": "Crush kasuri methi between your palms first.",
+  "diet": "nonveg",
+  "spice": 2,
+  "meal": "Butter Chicken"
+ },
+ {
+  "id": "ramen",
+  "name": "Tonkotsu Ramen",
+  "category": "Main",
+  "origin": "Japan",
+  "emoji": "🍜",
+  "c1": "#1e3c72",
+  "c2": "#2a5298",
+  "time": "12 hrs",
+  "price": 480,
+  "wiki": "Ramen",
+  "story": "A rich pork-bone broth simmered overnight, springy noodles, soft-boiled egg, chashu and spring onion.",
+  "ingredients": [
+   "Pork bones",
+   "Ramen noodles",
+   "Eggs",
+   "Chashu pork",
+   "Spring onion",
+   "Garlic",
+   "Soy tare"
+  ],
+  "steps": [
+   "Simmer pork bones 10 to 12 hours for a creamy broth.",
+   "Marinate soft-boiled eggs and slice the chashu.",
+   "Cook noodles, assemble in hot broth and top."
+  ],
+  "tip": "Marinate the eggs for 6 hours.",
+  "diet": "nonveg",
+  "spice": 1
+ },
+ {
+  "id": "pad-thai",
+  "name": "Pad Thai",
+  "category": "Main",
+  "origin": "Thailand",
+  "emoji": "🥡",
+  "c1": "#ffb347",
+  "c2": "#43cea2",
+  "time": "25 min",
+  "price": 380,
+  "wiki": "Pad thai",
+  "story": "Stir-fried rice noodles in a sweet, sour and salty tamarind sauce with prawns, egg and crushed peanuts.",
+  "ingredients": [
+   "Rice noodles",
+   "Prawns",
+   "Tamarind paste",
+   "Fish sauce",
+   "Palm sugar",
+   "Peanuts",
+   "Bean sprouts"
+  ],
+  "steps": [
+   "Soak the rice noodles until pliable.",
+   "Stir-fry prawns, then push aside and scramble the egg.",
+   "Toss noodles with sauce, sprouts and peanuts."
+  ],
+  "tip": "Cook in small batches over very high heat.",
+  "diet": "nonveg",
+  "spice": 2,
+  "meal": "Pad See Ew"
+ },
+ {
+  "id": "paella",
+  "name": "Seafood Paella",
+  "category": "Main",
+  "origin": "Spain",
+  "emoji": "🥘",
+  "c1": "#f9d423",
+  "c2": "#e65c00",
+  "time": "60 min",
+  "price": 720,
+  "wiki": "Paella",
+  "story": "Saffron rice cooked in a wide pan with prawns, mussels and squid until a crisp golden crust forms.",
+  "ingredients": [
+   "Bomba rice",
+   "Saffron",
+   "Prawns",
+   "Mussels",
+   "Squid",
+   "Smoked paprika",
+   "Green peas"
+  ],
+  "steps": [
+   "Fry seafood lightly and make a tomato sofrito.",
+   "Add rice, saffron and stock, and don't stir.",
+   "Cook until a crust (socarrat) forms on the bottom."
+  ],
+  "tip": "Listen for a gentle crackle: that's the socarrat.",
+  "diet": "nonveg",
+  "spice": 0
+ },
+ {
+  "id": "lasagna",
+  "name": "Classic Lasagne",
+  "category": "Main",
+  "origin": "Italy",
+  "emoji": "🍝",
+  "c1": "#cb2d3e",
+  "c2": "#ef473a",
+  "time": "2 hrs",
+  "price": 460,
+  "wiki": "Lasagne",
+  "story": "Layers of pasta, slow-cooked ragù, silky béchamel and parmesan, baked until bubbling.",
+  "ingredients": [
+   "Lasagne sheets",
+   "Beef mince",
+   "Tomato passata",
+   "Béchamel",
+   "Parmesan",
+   "Mozzarella",
+   "Nutmeg"
+  ],
+  "steps": [
+   "Simmer the ragù for at least an hour.",
+   "Layer pasta, ragù and béchamel.",
+   "Top with cheese and bake until golden."
+  ],
+  "tip": "Rest it 15 minutes before cutting.",
+  "diet": "nonveg",
+  "spice": 0,
+  "meal": "Lasagne"
+ },
+ {
+  "id": "tacos",
+  "name": "Street Tacos",
+  "category": "Snack",
+  "origin": "Mexico",
+  "emoji": "🌮",
+  "c1": "#f9d423",
+  "c2": "#ff4e50",
+  "time": "30 min",
+  "price": 300,
+  "wiki": "Taco",
+  "story": "Warm corn tortillas with charred, spiced meat, onion, coriander and a squeeze of lime.",
+  "ingredients": [
+   "Corn tortillas",
+   "Marinated beef",
+   "White onion",
+   "Coriander",
+   "Lime",
+   "Chilli",
+   "Avocado"
+  ],
+  "steps": [
+   "Marinate meat with chilli, garlic, lime and cumin, then grill.",
+   "Warm the tortillas over a flame.",
+   "Fill with meat, onion, coriander and lime."
+  ],
+  "tip": "Toast tortillas straight on the flame.",
+  "diet": "nonveg",
+  "spice": 2,
+  "meal": "Chicken Taco"
+ },
+ {
+  "id": "burger",
+  "name": "Smash Burger",
+  "category": "Snack",
+  "origin": "USA",
+  "emoji": "🍔",
+  "c1": "#f83600",
+  "c2": "#f9d423",
+  "time": "15 min",
+  "price": 350,
+  "wiki": "Hamburger",
+  "story": "Beef pressed on a screaming-hot griddle for a lacy crust, with melted cheese, pickles and a soft bun.",
+  "ingredients": [
+   "Beef mince",
+   "American cheese",
+   "Brioche bun",
+   "Pickles",
+   "Onion",
+   "Special sauce",
+   "Butter"
+  ],
+  "steps": [
+   "Roll beef into loose balls and season generously.",
+   "Smash on a hot griddle 60 seconds, flip, add cheese.",
+   "Build on a toasted bun with pickles and sauce."
+  ],
+  "tip": "Smash once, then leave it alone.",
+  "diet": "nonveg",
+  "spice": 0,
+  "meal": "Burger"
+ },
+ {
+  "id": "falafel",
+  "name": "Falafel Wrap",
+  "category": "Snack",
+  "origin": "Middle East",
+  "emoji": "🧆",
+  "c1": "#56ab2f",
+  "c2": "#a8e063",
+  "time": "40 min",
+  "price": 260,
+  "wiki": "Falafel",
+  "story": "Crisp chickpea fritters herbed with parsley and coriander, wrapped in warm flatbread with tahini.",
+  "ingredients": [
+   "Chickpeas",
+   "Parsley",
+   "Coriander",
+   "Garlic",
+   "Cumin",
+   "Tahini",
+   "Flatbread"
+  ],
+  "steps": [
+   "Blend soaked raw chickpeas with herbs and spices.",
+   "Shape into balls and deep-fry until deep golden.",
+   "Wrap with salad, pickles and tahini."
+  ],
+  "tip": "Use soaked, not canned, chickpeas.",
+  "diet": "veg",
+  "spice": 1
+ },
+ {
+  "id": "tiramisu",
+  "name": "Classic Tiramisu",
+  "category": "Dessert",
+  "origin": "Italy",
+  "emoji": "🍰",
+  "c1": "#8e2de2",
+  "c2": "#ff6a88",
+  "time": "30 min + chill",
+  "price": 320,
+  "wiki": "Tiramisu",
+  "story": "Espresso-soaked savoiardi layered with whipped mascarpone cream and dusted with cocoa.",
+  "ingredients": [
+   "Mascarpone",
+   "Espresso",
+   "Ladyfingers",
+   "Eggs",
+   "Sugar",
+   "Cocoa",
+   "Marsala"
+  ],
+  "steps": [
+   "Whisk yolks and sugar, then fold in mascarpone.",
+   "Dip ladyfingers briefly in espresso and layer with cream.",
+   "Chill overnight and dust with cocoa."
+  ],
+  "tip": "Dip the biscuits for just two seconds.",
+  "diet": "egg",
+  "spice": 0,
+  "meal": "Tiramisu"
+ },
+ {
+  "id": "gulab-jamun",
+  "name": "Gulab Jamun",
+  "category": "Dessert",
+  "origin": "India",
+  "emoji": "🍮",
+  "c1": "#8b3a1a",
+  "c2": "#d4813a",
+  "time": "45 min",
+  "price": 180,
+  "wiki": "Gulab jamun",
+  "story": "Soft milk-solid dumplings fried golden and soaked in cardamom and rose sugar syrup.",
+  "ingredients": [
+   "Khoya",
+   "Paneer",
+   "Flour",
+   "Sugar",
+   "Cardamom",
+   "Rose water",
+   "Ghee"
+  ],
+  "steps": [
+   "Knead khoya, paneer and flour into a smooth dough.",
+   "Shape small balls and fry slowly in ghee.",
+   "Soak in warm cardamom-rose syrup for an hour."
+  ],
+  "tip": "Fry on low heat so the centres cook through.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "mango-lassi",
+  "name": "Mango Lassi",
+  "category": "Drink",
+  "origin": "India",
+  "emoji": "🥭",
+  "c1": "#fdc830",
+  "c2": "#f37335",
+  "time": "5 min",
+  "price": 140,
+  "wiki": "Lassi",
+  "story": "A thick, chilled yoghurt drink blended with ripe mango and a pinch of cardamom.",
+  "ingredients": [
+   "Ripe mango",
+   "Yoghurt",
+   "Milk",
+   "Sugar",
+   "Cardamom",
+   "Ice",
+   "Pistachios"
+  ],
+  "steps": [
+   "Blend mango, yoghurt and milk until smooth.",
+   "Sweeten and add a pinch of cardamom.",
+   "Serve over ice with chopped pistachios."
+  ],
+  "tip": "Use Alphonso mangoes when in season.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "masala-chai",
+  "name": "Masala Chai",
+  "category": "Drink",
+  "origin": "India",
+  "emoji": "☕",
+  "c1": "#c79081",
+  "c2": "#7b4a2f",
+  "time": "10 min",
+  "price": 90,
+  "wiki": "Masala chai",
+  "story": "Strong black tea simmered with milk, ginger and warming spices.",
+  "ingredients": [
+   "Assam tea",
+   "Milk",
+   "Ginger",
+   "Cardamom",
+   "Cloves",
+   "Cinnamon",
+   "Sugar"
+  ],
+  "steps": [
+   "Simmer water with ginger and whole spices.",
+   "Add tea leaves and boil until dark.",
+   "Add milk, bring to a boil and strain."
+  ],
+  "tip": "Boil it twice for a deeper flavour.",
+  "diet": "veg",
+  "spice": 1
+ },
+ {
+  "id": "idli",
+  "name": "Idli & Sambar",
+  "category": "Breakfast",
+  "origin": "India",
+  "emoji": "🍚",
+  "c1": "#89f7fe",
+  "c2": "#66a6ff",
+  "time": "30 min",
+  "price": 120,
+  "wiki": "Idli",
+  "story": "Soft steamed rice-and-lentil cakes served with sambar and coconut chutney.",
+  "ingredients": [
+   "Idli batter",
+   "Urad dal",
+   "Rice",
+   "Fenugreek",
+   "Sambar",
+   "Coconut chutney",
+   "Curry leaves"
+  ],
+  "steps": [
+   "Ferment rice and urad dal batter overnight.",
+   "Pour into greased idli moulds.",
+   "Steam 12 minutes and serve hot with sambar."
+  ],
+  "tip": "Ferment in a warm spot for fluffier idlis.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "french-toast",
+  "name": "French Toast",
+  "category": "Breakfast",
+  "origin": "France",
+  "emoji": "🍞",
+  "c1": "#ffd89b",
+  "c2": "#19547b",
+  "time": "20 min",
+  "price": 210,
+  "wiki": "French toast",
+  "story": "Thick slices of brioche soaked in custard and pan-fried golden, dusted with cinnamon sugar.",
+  "ingredients": [
+   "Brioche",
+   "Eggs",
+   "Milk",
+   "Cinnamon",
+   "Vanilla",
+   "Butter",
+   "Maple syrup"
+  ],
+  "steps": [
+   "Whisk eggs, milk, cinnamon and vanilla.",
+   "Soak bread slices 30 seconds each side.",
+   "Fry in butter until golden and serve with syrup."
+  ],
+  "tip": "Use slightly stale bread so it soaks without falling apart.",
+  "diet": "egg",
+  "spice": 0
+ },
+ {
+  "id": "hummus",
+  "name": "Creamy Hummus",
+  "category": "Starter",
+  "origin": "Middle East",
+  "emoji": "🫘",
+  "c1": "#e9b872",
+  "c2": "#a8703a",
+  "time": "20 min",
+  "price": 200,
+  "wiki": "Hummus",
+  "story": "Silky chickpea and tahini dip with lemon and olive oil, served with warm pita.",
+  "ingredients": [
+   "Chickpeas",
+   "Tahini",
+   "Lemon",
+   "Garlic",
+   "Olive oil",
+   "Cumin",
+   "Pita bread"
+  ],
+  "steps": [
+   "Boil chickpeas until very soft.",
+   "Blend with tahini, lemon, garlic and ice water.",
+   "Serve drizzled with olive oil and paprika."
+  ],
+  "tip": "Blend for a full 4 minutes for a smooth texture.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "gyoza",
+  "name": "Pan-fried Gyoza",
+  "category": "Starter",
+  "origin": "Japan",
+  "emoji": "🥟",
+  "c1": "#56ccf2",
+  "c2": "#2f80ed",
+  "time": "35 min",
+  "price": 280,
+  "wiki": "Gyoza",
+  "story": "Pan-fried dumplings with crisp bottoms and a juicy pork and cabbage filling.",
+  "ingredients": [
+   "Gyoza wrappers",
+   "Pork mince",
+   "Cabbage",
+   "Garlic",
+   "Ginger",
+   "Soy sauce",
+   "Sesame oil"
+  ],
+  "steps": [
+   "Mix the filling and season with soy and sesame oil.",
+   "Fold into pleated half-moons.",
+   "Fry, add water and cover to steam, then crisp again."
+  ],
+  "tip": "Add water to the pan only after the bottoms brown.",
+  "diet": "nonveg",
+  "spice": 0
+ },
+ {
+  "id": "ceviche",
+  "name": "Fresh Ceviche",
+  "category": "Starter",
+  "origin": "Peru",
+  "emoji": "🐟",
+  "c1": "#11998e",
+  "c2": "#38ef7d",
+  "time": "25 min",
+  "price": 520,
+  "wiki": "Ceviche",
+  "story": "Fresh white fish cured in lime juice with chilli, red onion and coriander.",
+  "ingredients": [
+   "White fish",
+   "Lime juice",
+   "Red onion",
+   "Chilli",
+   "Coriander",
+   "Sweet potato",
+   "Sea salt"
+  ],
+  "steps": [
+   "Cut very fresh fish into small cubes.",
+   "Toss with lime juice, salt, chilli and onion.",
+   "Rest 10 minutes and serve with sweet potato."
+  ],
+  "tip": "Serve within 15 minutes or the fish turns chalky.",
+  "diet": "nonveg",
+  "spice": 1
+ },
+ {
+  "id": "fish-and-chips",
+  "name": "Fish and Chips",
+  "category": "Main",
+  "origin": "UK",
+  "emoji": "🍟",
+  "c1": "#f2994a",
+  "c2": "#f2c94c",
+  "time": "40 min",
+  "price": 480,
+  "wiki": "Fish and chips",
+  "story": "Crisp beer-battered fish with thick golden chips, mushy peas and tartar sauce.",
+  "ingredients": [
+   "White fish fillet",
+   "Flour",
+   "Beer",
+   "Potatoes",
+   "Malt vinegar",
+   "Tartar sauce",
+   "Mushy peas"
+  ],
+  "steps": [
+   "Cut potatoes and fry twice for crisp chips.",
+   "Dip fish in cold beer batter.",
+   "Fry until golden and serve with vinegar and tartar sauce."
+  ],
+  "tip": "Keep the batter ice cold for the crispiest crust.",
+  "diet": "nonveg",
+  "spice": 0
+ },
+ {
+  "id": "carbonara",
+  "name": "Spaghetti Carbonara",
+  "category": "Main",
+  "origin": "Italy",
+  "emoji": "🍝",
+  "c1": "#f5af19",
+  "c2": "#f12711",
+  "time": "25 min",
+  "price": 430,
+  "wiki": "Carbonara",
+  "story": "Spaghetti with crisp guanciale, egg yolk, pecorino and black pepper, no cream.",
+  "ingredients": [
+   "Spaghetti",
+   "Guanciale",
+   "Egg yolks",
+   "Pecorino Romano",
+   "Black pepper",
+   "Salt",
+   "Pasta water"
+  ],
+  "steps": [
+   "Crisp the guanciale slowly in its own fat.",
+   "Mix yolks, pecorino and pepper into a paste.",
+   "Toss hot pasta off the heat with the paste and pasta water."
+  ],
+  "tip": "Take the pan off the heat so the eggs don't scramble.",
+  "diet": "nonveg",
+  "spice": 0,
+  "meal": "Spaghetti Carbonara"
+ },
+ {
+  "id": "pho",
+  "name": "Beef Pho",
+  "category": "Main",
+  "origin": "Vietnam",
+  "emoji": "🍜",
+  "c1": "#0f2027",
+  "c2": "#2c5364",
+  "time": "6 hrs",
+  "price": 420,
+  "wiki": "Pho",
+  "story": "A fragrant beef broth with rice noodles, herbs and lime, simmered with charred ginger and star anise.",
+  "ingredients": [
+   "Beef bones",
+   "Rice noodles",
+   "Star anise",
+   "Charred ginger",
+   "Onion",
+   "Fish sauce",
+   "Thai basil"
+  ],
+  "steps": [
+   "Char ginger and onion, then simmer with bones and spices for 6 hours.",
+   "Cook rice noodles and slice beef thinly.",
+   "Ladle boiling broth over noodles and top with herbs and lime."
+  ],
+  "tip": "Skim the broth often for a clear finish.",
+  "diet": "nonveg",
+  "spice": 1
+ },
+ {
+  "id": "bibimbap",
+  "name": "Bibimbap",
+  "category": "Main",
+  "origin": "Korea",
+  "emoji": "🍚",
+  "c1": "#f7797d",
+  "c2": "#fbd786",
+  "time": "40 min",
+  "price": 400,
+  "wiki": "Bibimbap",
+  "story": "Warm rice topped with seasoned vegetables, beef, a fried egg and spicy gochujang, mixed at the table.",
+  "ingredients": [
+   "Steamed rice",
+   "Beef",
+   "Spinach",
+   "Carrot",
+   "Bean sprouts",
+   "Egg",
+   "Gochujang"
+  ],
+  "steps": [
+   "Sauté each vegetable separately with sesame oil.",
+   "Cook the marinated beef and fry an egg.",
+   "Arrange over rice and mix with gochujang."
+  ],
+  "tip": "Use a hot stone bowl for a crispy rice bottom.",
+  "diet": "nonveg",
+  "spice": 2
+ },
+ {
+  "id": "chole-bhature",
+  "name": "Chole Bhature",
+  "category": "Main",
+  "origin": "India",
+  "emoji": "🫓",
+  "c1": "#c31432",
+  "c2": "#240b36",
+  "time": "60 min",
+  "price": 220,
+  "wiki": "Chole bhature",
+  "story": "Spicy chickpea curry with puffy deep-fried bhature bread, a Punjabi favourite.",
+  "ingredients": [
+   "Chickpeas",
+   "Onion",
+   "Tomato",
+   "Chole masala",
+   "Tea leaves",
+   "Flour",
+   "Yoghurt"
+  ],
+  "steps": [
+   "Simmer chickpeas with onion, tomato and chole masala.",
+   "Knead bhature dough with yoghurt and rest 2 hours.",
+   "Roll and deep-fry until puffed."
+  ],
+  "tip": "Add a tea bag while boiling the chickpeas for a dark colour.",
+  "diet": "veg",
+  "spice": 3
+ },
+ {
+  "id": "tom-yum",
+  "name": "Tom Yum Soup",
+  "category": "Main",
+  "origin": "Thailand",
+  "emoji": "🍲",
+  "c1": "#f83600",
+  "c2": "#fe8c00",
+  "time": "30 min",
+  "price": 400,
+  "wiki": "Tom yum",
+  "story": "Hot and sour lemongrass soup with prawns, mushrooms, galangal and lime.",
+  "ingredients": [
+   "Prawns",
+   "Lemongrass",
+   "Galangal",
+   "Kaffir lime leaves",
+   "Mushrooms",
+   "Thai chillies",
+   "Lime juice"
+  ],
+  "steps": [
+   "Simmer lemongrass, galangal and lime leaves in stock.",
+   "Add mushrooms and prawns and cook 3 minutes.",
+   "Finish with lime juice, fish sauce and chilli."
+  ],
+  "tip": "Add lime juice off the heat to keep it bright.",
+  "diet": "nonveg",
+  "spice": 3
+ },
+ {
+  "id": "vada-pav",
+  "name": "Vada Pav",
+  "category": "Snack",
+  "origin": "India",
+  "emoji": "🍔",
+  "c1": "#f2994a",
+  "c2": "#eb5757",
+  "time": "30 min",
+  "price": 70,
+  "wiki": "Vada pav",
+  "story": "Mumbai's street burger: a spicy potato fritter in a soft pav with garlic chutney.",
+  "ingredients": [
+   "Potatoes",
+   "Gram flour",
+   "Pav buns",
+   "Green chilli",
+   "Garlic chutney",
+   "Mustard seeds",
+   "Curry leaves"
+  ],
+  "steps": [
+   "Mash potatoes with spices and shape into balls.",
+   "Dip in gram-flour batter and deep-fry.",
+   "Tuck into a toasted pav with chutneys."
+  ],
+  "tip": "Smear the pav with garlic chutney generously.",
+  "diet": "veg",
+  "spice": 3
+ },
+ {
+  "id": "shawarma",
+  "name": "Chicken Shawarma",
+  "category": "Snack",
+  "origin": "Middle East",
+  "emoji": "🌯",
+  "c1": "#f7b733",
+  "c2": "#e35d5b",
+  "time": "40 min",
+  "price": 280,
+  "wiki": "Shawarma",
+  "story": "Spiced, thinly shaved roast meat wrapped in flatbread with garlic sauce and pickles.",
+  "ingredients": [
+   "Chicken thighs",
+   "Flatbread",
+   "Garlic sauce",
+   "Pickles",
+   "Tomato",
+   "Cumin",
+   "Paprika"
+  ],
+  "steps": [
+   "Marinate chicken with yoghurt, cumin and paprika.",
+   "Roast or grill until charred, then slice thin.",
+   "Wrap with garlic sauce, pickles and salad."
+  ],
+  "tip": "Slice the meat thin against the grain.",
+  "diet": "nonveg",
+  "spice": 2
+ },
+ {
+  "id": "cheesecake",
+  "name": "Berry Cheesecake",
+  "category": "Dessert",
+  "origin": "USA",
+  "emoji": "🍰",
+  "c1": "#4facfe",
+  "c2": "#00f2fe",
+  "time": "1 hr + chill",
+  "price": 340,
+  "wiki": "Cheesecake",
+  "story": "A creamy baked cheesecake on a buttery biscuit base with a berry topping.",
+  "ingredients": [
+   "Cream cheese",
+   "Digestive biscuits",
+   "Butter",
+   "Sugar",
+   "Eggs",
+   "Vanilla",
+   "Berries"
+  ],
+  "steps": [
+   "Press buttered biscuit crumbs into a tin.",
+   "Beat cream cheese with sugar and eggs and pour in.",
+   "Bake gently, chill overnight and top with berries."
+  ],
+  "tip": "Bake in a water bath to prevent cracks.",
+  "diet": "egg",
+  "spice": 0
+ },
+ {
+  "id": "baklava",
+  "name": "Pistachio Baklava",
+  "category": "Dessert",
+  "origin": "Turkey",
+  "emoji": "🥮",
+  "c1": "#f7b733",
+  "c2": "#7b4a2f",
+  "time": "1 hr",
+  "price": 300,
+  "wiki": "Baklava",
+  "story": "Paper-thin phyllo layered with pistachios and soaked in honey syrup.",
+  "ingredients": [
+   "Phyllo pastry",
+   "Pistachios",
+   "Butter",
+   "Honey",
+   "Sugar",
+   "Lemon",
+   "Cinnamon"
+  ],
+  "steps": [
+   "Layer buttered phyllo sheets with crushed pistachios.",
+   "Cut into diamonds and bake until golden.",
+   "Pour cool syrup over the hot baklava."
+  ],
+  "tip": "Pour cold syrup on hot pastry for a crisp finish.",
+  "diet": "veg",
+  "spice": 0
+ },
+ {
+  "id": "lemonade",
+  "name": "Fresh Lemonade",
+  "category": "Drink",
+  "origin": "USA",
+  "emoji": "🍋",
+  "c1": "#fceabb",
+  "c2": "#f8b500",
+  "time": "10 min",
+  "price": 100,
+  "wiki": "Lemonade",
+  "story": "Fresh-squeezed lemonade, sweet, tart and served over plenty of ice.",
+  "ingredients": [
+   "Lemons",
+   "Sugar",
+   "Water",
+   "Mint",
+   "Ice",
+   "Salt",
+   "Soda water"
+  ],
+  "steps": [
+   "Dissolve sugar in warm water to make a syrup.",
+   "Add fresh lemon juice and chill.",
+   "Serve over ice with mint."
+  ],
+  "tip": "Add a tiny pinch of salt to lift the flavour.",
+  "diet": "veg",
+  "spice": 0
+ }
+]

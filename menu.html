@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Menu | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph"><h1>The <span class="grad">full menu</span></h1><p class="lead">37 dishes. Search, filter, sort and save your favourites. Click a card for the recipe and to order.</p>
+ <div class="modebar" id="mb2" hidden></div>
+ <div class="tools"><div class="filters" id="filters" role="group" aria-label="Filter dishes"></div>
+ <div style="display:flex;gap:.6rem;flex-wrap:wrap"><input id="q" type="search" placeholder="Search dishes or ingredients..." aria-label="Search"><select id="sort" class="sm" aria-label="Sort"><option value="">Sort: Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="az">Name: A to Z</option><option value="rt">Top rated</option></select><select id="pr" class="sm" aria-label="Price"><option value="">Any price</option><option value="lo">Under ₹200</option><option value="mid">₹200 to ₹400</option><option value="hi">Above ₹400</option></select><label class="tgl"><input type="checkbox" id="veg"> 🟢 Veg only</label></div></div>
+ <div class="grid" id="grid" aria-live="polite"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div></div></main><script src="site.js"></script><script>
+const CATS=["All","Breakfast","Starter","Main","Snack","Dessert","Drink","♥ Saved"];let ds=[],active="All";const pc=new URLSearchParams(location.search).get("c");if(CATS.includes(pc))active=pc;
+function render(){$("#filters").innerHTML=CATS.map(c=>`<button aria-pressed="${c===active}" data-c="${c}">${c}</button>`).join("");
+ const q=$("#q").value.trim().toLowerCase(),so=$("#sort").value;
+ const pr=$("#pr").value,pf=d=>!pr||(pr==="lo"?d.price<200:pr==="mid"?d.price>=200&&d.price<=400:d.price>400);let l=ds.filter(d=>pf(d)&&(active==="All"||(active==="♥ Saved"?favs.has(d.id):d.category===active))&&(!$("#veg").checked||d.diet==="veg")&&(!q||(d.name+" "+d.origin+" "+d.ingredients.join(" ")).toLowerCase().includes(q)));
+ if(so==="lo")l.sort((a,b)=>a.price-b.price);if(so==="hi")l.sort((a,b)=>b.price-a.price);if(so==="az")l.sort((a,b)=>a.name.localeCompare(b.name));if(so==="rt")l.sort((a,b)=>((RT[b.id]||{}).avg||0)-((RT[a.id]||{}).avg||0));
+ $("#grid").innerHTML=l.length?l.map(cardHTML).join(""):'<p class="lead">No dishes found. Try another search or filter.</p>';watch()}
+window.onFav=()=>{if(active==="♥ Saved")render()};
+$("#filters").onclick=e=>{const b=e.target.closest("button");if(b){active=b.dataset.c;render()}};
+$("#q").oninput=render;$("#sort").onchange=render;$("#veg").onchange=render;$("#pr").onchange=render;
+getDishes().then(x=>{ds=x;render()}).catch(()=>$("#grid").textContent="Could not load dishes. Is the server running?");(()=>{const M={delivery:["🚚","Delivery"],takeaway:["🛍️","Takeaway"],dinein:["🍽️","Dine-in"]};let t="";try{t=localStorage.getItem("otype")||""}catch{}
+ if(M[t]){$("#mb2").hidden=false;$("#mb2").innerHTML=`Ordering for ${M[t][0]} <b>${M[t][1]}</b> <a class="link" href="index.html#modes">Change</a>`}})();
+</script></body></html>

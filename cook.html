@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How I Cook | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph"><h1>How I <span class="grad">cook</span></h1><p class="lead">Good food isn't luck. It's a few simple habits repeated every day. Choose a topic to read the full guide, with tips and dishes to try.</p>
+ <div class="tcs rv" id="tcs" style="margin-top:2rem"></div>
+ <h2 style="margin-top:4rem">From market to <span class="grad">table</span></h2>
+ <div class="tl rv" style="margin-top:1.5rem">
+  <div><div class="num">1</div><h3>🛒 Source</h3><p>Shop early for the freshest produce, spices and proteins.</p><a class="link" href="topic.html?s=cook&id=fresh">Read more →</a></div>
+  <div><div class="num">2</div><h3>🔪 Prep</h3><p>Chop, measure and arrange everything before the stove is lit.</p><a class="link" href="topic.html?s=cook&id=prep">Read more →</a></div>
+  <div><div class="num">3</div><h3>🔥 Cook</h3><p>Heat, timing and taste, adjusting as you go.</p><a class="link" href="topic.html?s=cook&id=heat">Read more →</a></div>
+  <div><div class="num">4</div><h3>🍽️ Plate</h3><p>Colour, height and a clean rim, served while hot.</p><a class="link" href="topic.html?s=cook&id=plate">Read more →</a></div></div>
+ <div class="more"><a class="btn ghost" href="menu.html">Browse the recipes →</a></div></div></main><script src="site.js"></script><script>fetch("/api/content").then(r=>r.json()).then(C=>{$("#tcs").innerHTML=C.cook.map(t=>tc("cook",t)).join("");watch()});</script></body></html>

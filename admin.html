@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | Flavour Lab</title>
+<style>*{box-sizing:border-box;margin:0}body{font:400 1rem/1.6 "Segoe UI",system-ui,sans-serif;background:#0c0a12;color:#f6f3fa;min-height:100vh;padding:2rem 1rem}.w{max-width:900px;margin:0 auto}
+h1{font-size:2rem;background:linear-gradient(120deg,#ffc93c,#ff6b35,#ff2e7e,#2f8bff);-webkit-background-clip:text;background-clip:text;color:transparent}.mut{color:#a9a3b8}
+.box,.item{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:18px;padding:1.2rem;margin-top:1rem}
+input{font:inherit;padding:.7rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.4);color:#fff;width:100%;margin:.6rem 0}
+button{font:600 .9rem "Segoe UI",sans-serif;padding:.5rem 1.1rem;border:0;border-radius:99px;cursor:pointer;color:#fff;background:linear-gradient(120deg,#ff6b35,#ff2e7e)}
+button.g{background:transparent;border:1px solid rgba(255,255,255,.25)}button.on{background:linear-gradient(120deg,#2f8bff,#22d3ee);border:0}
+.bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;align-items:center}.item p{margin:.4rem 0;white-space:pre-wrap}.item small{color:#a9a3b8}.item a{color:#7db8ff}
+.st{display:inline-block;padding:0 .7rem;border-radius:99px;background:#2f8bff33;font-size:.8rem;margin-left:.4rem}#err{color:#ff7a8a}.acts{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}</style></head><body><div class="w">
+<h1>Admin dashboard</h1><p class="mut">Messages, bookings, orders, reviews and subscribers.</p>
+<div class="box" id="login"><label for="pw">Admin password</label><input id="pw" type="password" placeholder="Default: admin123"><button id="go">Sign in</button> <span id="err" role="alert"></span></div>
+<div id="app" hidden><div class="bar" id="tabs"></div><div class="bar"><b id="count"></b><span style="flex:1"></span><button class="g" id="csv">CSV</button><button class="g" id="ref">Refresh</button><button class="g" id="out">Log out</button></div><div id="list"></div></div>
+<script>
+const $=s=>document.querySelector(s);const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TABS=["messages","bookings","orders","reviews","subscribers"];
+const ST={bookings:["confirmed","cancelled"],orders:["preparing","delivered","cancelled"]};
+let pw=sessionStorage.getItem("apw")||"",tab="messages",data=[];const H=()=>({"x-admin-password":pw,"Content-Type":"application/json"});
+$("#tabs").innerHTML=TABS.map(t=>`<button data-t="${t}" class="${t===tab?"on":"g"}">${t[0].toUpperCase()+t.slice(1)}</button>`).join("");
+function body(m){
+ if(tab==="bookings")return `<p>📅 ${esc(m.date)} at ${esc(m.time)} · 👥 ${esc(m.guests)} · ${esc(m.occasion)} ${m.phone?"· 📞 "+esc(m.phone):""}</p>${(m.items||[]).length?`<p>🍽 Pre-order: ${m.items.map(i=>esc(i.qty)+" × "+esc(i.name)).join(", ")} (₹${esc(m.preTotal)})</p>`:""}${m.note?`<p>${esc(m.note)}</p>`:""}`;
+ if(tab==="orders")return `<p>${(m.items||[]).map(i=>esc(i.qty)+" × "+esc(i.name)).join(", ")}</p><p><b>₹${esc(m.total)}</b>${m.coupon?` (coupon ${esc(m.coupon)}, −₹${esc(m.discount)})`:""} · 📞 ${esc(m.phone)}<br>${esc((m.type||"delivery").toUpperCase())}${m.address?" · 📍 "+esc(m.address):""}${m.pickup?" · ⏰ "+esc(m.pickup):""}${m.type==="dinein"?" · 👥 "+esc(m.guests)+(m.bookingRef?" · "+esc(m.bookingRef):""):""} · 💳 ${esc(m.payment||"")}</p>${m.note?`<p>${esc(m.note)}</p>`:""}`;
+ if(tab==="reviews")return `<p>${"★".repeat(m.rating)} on <b>${esc(m.dish)}</b> ${m.kind?`<span class="st">${esc(m.kind)}</span>`:""}${m.verified?`<span class="st">✔ verified</span>`:""}</p><p>${esc(m.comment)}</p>`;
+ return m.message?`<p>${esc(m.message)}</p>`:""}
+async function load(){const r=await fetch("/api/admin/"+tab,{headers:H()});
+ if(!r.ok){sessionStorage.removeItem("apw");$("#login").hidden=false;$("#app").hidden=true;$("#err").textContent=pw?"Wrong password.":"";return}
+ data=await r.json();$("#login").hidden=true;$("#app").hidden=false;$("#count").textContent=data.length+" "+tab;
+ $("#list").innerHTML=data.length?data.map(m=>`<div class="item"><b>${esc(m.name||m.email)}</b>${m.status?`<span class="st">${esc(m.status)}</span>`:""}${m.ref?` <small>${esc(m.ref)}</small>`:""}<br><small>${m.name&&m.email?esc(m.email)+" · ":""}${new Date(m.at).toLocaleString()}</small>
+ ${body(m)}<div class="acts">${m.email?`<a href="mailto:${esc(m.email)}">Email</a>`:""}${(ST[tab]||[]).map(s=>`<button class="g" data-s="${s}" data-id="${esc(m.id)}">${s}</button>`).join("")}<button class="g" data-id="${esc(m.id)}" data-del="1">Delete</button></div></div>`).join(""):'<div class="item mut">Nothing here yet.</div>'}
+$("#go").onclick=()=>{pw=$("#pw").value;sessionStorage.setItem("apw",pw);load()};$("#pw").onkeydown=e=>{if(e.key==="Enter")$("#go").click()};
+$("#ref").onclick=load;$("#out").onclick=()=>{sessionStorage.removeItem("apw");location.reload()};
+$("#tabs").onclick=e=>{const b=e.target.closest("[data-t]");if(!b)return;tab=b.dataset.t;document.querySelectorAll("[data-t]").forEach(x=>x.className=x===b?"on":"g");load()};
+$("#list").onclick=async e=>{const b=e.target.closest("[data-id]");if(!b)return;const u="/api/admin/"+tab+"/"+encodeURIComponent(b.dataset.id);
+ if(b.dataset.del){if(!confirm("Delete this entry?"))return;await fetch(u,{method:"DELETE",headers:H()})}
+ else if(b.dataset.s){await fetch(u,{method:"PATCH",headers:H(),body:JSON.stringify({status:b.dataset.s})})}load()};
+$("#csv").onclick=()=>{const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const k=[...new Set(data.flatMap(m=>Object.keys(m)))].filter(x=>x!=="items");
+ const t=[k.join(","),...data.map(m=>k.map(c=>q(m[c])).join(","))].join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/csv"}));a.download=tab+".csv";a.click()};
+if(pw)load();
+</script></div></body></html>

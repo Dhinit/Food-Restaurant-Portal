@@ -1,0 +1,497 @@
+{
+ "cook": [
+  {
+   "id": "heat",
+   "title": "Respect the heat",
+   "emoji": "🔥",
+   "c1": "#ff6b35",
+   "c2": "#ff2e7e",
+   "intro": "Heat is the most powerful ingredient in any kitchen, and the easiest to get wrong. Learn to read it and every dish improves.",
+   "body": [
+    {
+     "h": "High heat: for colour and crunch",
+     "p": "Searing, stir-frying and griddling need a pan that is properly hot before the food goes in. A hot surface browns the outside quickly, building deep savoury flavour while keeping the inside juicy. If the food doesn't sizzle the moment it lands, wait."
+    },
+    {
+     "h": "Low heat: for tenderness",
+     "p": "Curries, broths, biryani and custards reward patience. Slow, gentle heat softens tough cuts, melds spices and stops eggs from scrambling. A simmer should barely tremble, not boil."
+    },
+    {
+     "h": "How to read your pan",
+     "p": "Flick a drop of water onto the pan: it should dance and vanish. Oil should shimmer, not smoke. Butter should foam and smell nutty, not turn black. Your senses are the best thermometer."
+    }
+   ],
+   "tips": [
+    "Preheat the pan for two minutes before adding oil.",
+    "Don't overcrowd the pan, or food steams instead of browning.",
+    "Pat food dry before searing for a better crust."
+   ],
+   "dishes": [
+    "burger",
+    "pizza",
+    "biryani"
+   ],
+   "links": []
+  },
+  {
+   "id": "fresh",
+   "title": "Fresh and seasonal",
+   "emoji": "🌿",
+   "c1": "#14d9b5",
+   "c2": "#2f8bff",
+   "intro": "The best recipe can't rescue tired ingredients. Cooking with what's in season means better flavour, better prices and less waste.",
+   "body": [
+    {
+     "h": "Shop like a chef",
+     "p": "Go early, walk the whole market first, then buy what looks and smells best. Firm skin, bright colour and a fresh aroma are your signs. Let the market decide the menu, not the other way around."
+    },
+    {
+     "h": "Seasonal cooking in India",
+     "p": "Mangoes in summer, peas and leafy greens in winter, tender gourds in the monsoon. Traditional dishes were built around each season's stars, from mango lassi to hot winter parathas."
+    },
+    {
+     "h": "Storing it right",
+     "p": "Keep herbs like flowers in a glass of water, tomatoes on the counter and greens wrapped in a damp cloth. Buy small and often instead of stocking up on things that wilt."
+    }
+   ],
+   "tips": [
+    "Smell your produce; it should smell like itself.",
+    "Buy whole spices and grind them fresh.",
+    "Use ripe seasonal fruit for drinks and desserts."
+   ],
+   "dishes": [
+    "mango-lassi",
+    "bruschetta",
+    "ceviche"
+   ],
+   "links": []
+  },
+  {
+   "id": "plate",
+   "title": "Plate for the eye",
+   "emoji": "📸",
+   "c1": "#ff2e7e",
+   "c2": "#8b5cf6",
+   "intro": "We eat with our eyes first. A few simple habits make an everyday dish look restaurant-ready.",
+   "body": [
+    {
+     "h": "Colour",
+     "p": "Aim for contrast: a green herb on a red curry, a squeeze of lemon on golden fried food. Three colours on a plate is a good rule of thumb."
+    },
+    {
+     "h": "Height and space",
+     "p": "Stack, lean and layer to build height, and leave empty space around the food so it can breathe. Don't fill the plate to the edge."
+    },
+    {
+     "h": "Finish with texture",
+     "p": "A scatter of toasted nuts, crispy onions or fresh herbs adds crunch and freshness right at the end. Wipe the rim clean before serving."
+    }
+   ],
+   "tips": [
+    "Use a plate slightly larger than you think you need.",
+    "Odd numbers (3 or 5) look better than even ones.",
+    "Sauce goes under or beside the food, not all over it."
+   ],
+   "dishes": [
+    "sushi",
+    "tiramisu",
+    "cheesecake"
+   ],
+   "links": []
+  },
+  {
+   "id": "layers",
+   "title": "Season in layers",
+   "emoji": "🧂",
+   "c1": "#2f8bff",
+   "c2": "#22d3ee",
+   "intro": "One big pinch of salt at the end can't match small, thoughtful seasoning at every stage of cooking.",
+   "body": [
+    {
+     "h": "Salt early",
+     "p": "Salting onions as they cook draws out moisture and sweetness. Salting meat ahead lets it season all the way through, not just on the surface."
+    },
+    {
+     "h": "Balance with acid and sweet",
+     "p": "If a dish tastes flat it often needs acid (lemon, vinegar, tamarind), not more salt. A little sugar or jaggery rounds out sourness and heat."
+    },
+    {
+     "h": "Taste, adjust, repeat",
+     "p": "Taste after each addition. Small adjustments beat big corrections. Finish with fresh herbs or a squeeze of lime for brightness."
+    }
+   ],
+   "tips": [
+    "Salt pasta water until it tastes like the sea.",
+    "Add delicate herbs at the end and sturdy herbs at the start.",
+    "Let the dish rest, then taste once more before serving."
+   ],
+   "dishes": [
+    "pad-thai",
+    "tom-yum",
+    "butter-chicken"
+   ],
+   "links": []
+  },
+  {
+   "id": "prep",
+   "title": "Prep like a pro",
+   "emoji": "🔪",
+   "c1": "#8b5cf6",
+   "c2": "#ff6a88",
+   "intro": "Professional kitchens run on one habit called mise en place: everything in its place before the cooking starts.",
+   "body": [
+    {
+     "h": "Read the recipe first",
+     "p": "Read it twice. Know the steps, the timings and what needs to rest or chill ahead of time."
+    },
+    {
+     "h": "Chop, measure, arrange",
+     "p": "Cut all your vegetables, measure spices and set out sauces in small bowls before you turn the heat on. Cooking becomes calm and quick."
+    },
+    {
+     "h": "Clean as you go",
+     "p": "A tidy board and a bowl for scraps keeps you fast and safe. Wash your hands, and use separate boards for raw meat and vegetables."
+    }
+   ],
+   "tips": [
+    "A sharp knife is safer than a blunt one.",
+    "Line up ingredients in the order you'll use them.",
+    "Keep a damp cloth under the chopping board so it doesn't slip."
+   ],
+   "dishes": [
+    "gyoza",
+    "samosa",
+    "sushi"
+   ],
+   "links": []
+  },
+  {
+   "id": "spices",
+   "title": "Bloom your spices",
+   "emoji": "🌶️",
+   "c1": "#f5b301",
+   "c2": "#ff6b35",
+   "intro": "Spices taste completely different depending on how you treat them. Blooming unlocks their full aroma.",
+   "body": [
+    {
+     "h": "Whole spices in hot oil",
+     "p": "Cumin, mustard seeds and cloves go into hot oil or ghee first. When they sizzle and pop, the flavour is released into the fat and carries through the whole dish."
+    },
+    {
+     "h": "Ground spices need care",
+     "p": "Ground spices burn fast. Add them to a moist base like onion and tomato and stir constantly for a short time."
+    },
+    {
+     "h": "Toast and grind",
+     "p": "Dry-roast whole spices until fragrant, cool them and grind fresh. The difference from shop-bought powder is huge."
+    }
+   ],
+   "tips": [
+    "Stop when you can smell them; don't let them turn dark.",
+    "Store spices in airtight jars away from light.",
+    "Buy small quantities so they stay fresh."
+   ],
+   "dishes": [
+    "biryani",
+    "chole-bhature",
+    "masala-chai"
+   ],
+   "links": []
+  },
+  {
+   "id": "rest",
+   "title": "Rest your food",
+   "emoji": "⏱️",
+   "c1": "#22c55e",
+   "c2": "#14d9b5",
+   "intro": "Patience after cooking is as important as the cooking itself.",
+   "body": [
+    {
+     "h": "Meat",
+     "p": "Resting lets the juices settle back into the meat instead of running onto the board. Give steaks and roast chicken five to ten minutes."
+    },
+    {
+     "h": "Dough",
+     "p": "Rested dough is easier to roll and gives lighter results. Pizza, bhature and pastry all improve after a proper rest."
+    },
+    {
+     "h": "Curries and desserts",
+     "p": "Many curries taste better an hour later, and tiramisu or cheesecake need a night in the fridge. Plan ahead and let time do the work."
+    }
+   ],
+   "tips": [
+    "Cover meat loosely with foil while it rests.",
+    "Make curries a few hours before you need them.",
+    "Chill desserts overnight."
+   ],
+   "dishes": [
+    "tiramisu",
+    "lasagna",
+    "cheesecake"
+   ],
+   "links": []
+  },
+  {
+   "id": "waste",
+   "title": "Waste nothing",
+   "emoji": "♻️",
+   "c1": "#14d9b5",
+   "c2": "#8b5cf6",
+   "intro": "Good cooks respect ingredients. Almost every scrap has a second life.",
+   "body": [
+    {
+     "h": "Stems and peels",
+     "p": "Herb stems flavour stocks and chutneys. Vegetable peels and ends simmer into a light broth."
+    },
+    {
+     "h": "Bones and leftovers",
+     "p": "Bones make rich stock for ramen and pho. Leftover rice becomes fried rice, and stale bread becomes toast, croutons or French toast."
+    },
+    {
+     "h": "Plan and store",
+     "p": "Cook to a plan, label leftovers and use the oldest first. Freeze what you can't finish."
+    }
+   ],
+   "tips": [
+    "Keep a freezer bag for stock scraps.",
+    "Turn overripe fruit into lassi or smoothies.",
+    "Use citrus zest before you juice."
+   ],
+   "dishes": [
+    "ramen",
+    "pho",
+    "french-toast"
+   ],
+   "links": []
+  }
+ ],
+ "know": [
+  {
+   "id": "booking",
+   "title": "Booking a table",
+   "emoji": "📅",
+   "c1": "#8b5cf6",
+   "c2": "#ff6a88",
+   "intro": "Reserve a table in under a minute, and even pre-order your food.",
+   "body": [
+    {
+     "h": "How it works",
+     "p": "Open Book a table, choose a date, pick one of six time slots and enter your details. You get a booking reference immediately. Each slot has four tables, so popular times fill up."
+    },
+    {
+     "h": "Pre-order your food",
+     "p": "Use the Pre-order box to select dishes and quantities. Your food is prepared to be ready when you arrive."
+    },
+    {
+     "h": "Checking or changing a booking",
+     "p": "Enter your reference and email under Check my booking to see if it's pending, confirmed or cancelled. To change something, send us a message with your reference."
+    },
+    {
+     "h": "Group bookings",
+     "p": "We take up to 12 guests online. For bigger groups, get in touch through the Contact page."
+    }
+   ],
+   "tips": [
+    "Book at least a day ahead for weekends.",
+    "Mention allergies in the notes.",
+    "Keep your booking reference handy."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "Book a table",
+     "book.html"
+    ],
+    [
+     "Contact us",
+     "contact.html"
+    ]
+   ]
+  },
+  {
+   "id": "ordering",
+   "title": "Delivery, takeaway & dine-in",
+   "emoji": "🚚",
+   "c1": "#2f8bff",
+   "c2": "#22d3ee",
+   "intro": "Choose how you'd like your food on the home page, and the rest of the site adapts to your choice.",
+   "body": [
+    {
+     "h": "Delivery",
+     "p": "Food arrives in about 35 to 45 minutes. The fee is ₹40, and free for orders of ₹500 or more. You enter your address at checkout."
+    },
+    {
+     "h": "Takeaway",
+     "p": "Order ahead and collect in about 20 minutes. Choose a pickup time; there is no delivery fee."
+    },
+    {
+     "h": "Dine-in",
+     "p": "Book a table and pre-order, or order from your table. Add your booking reference at checkout so we can match it."
+    },
+    {
+     "h": "Tracking your order",
+     "p": "Use Track an order on the cart page with your reference and email to see if it's new, preparing or delivered."
+    }
+   ],
+   "tips": [
+    "Your choice is remembered, so you only pick once.",
+    "You can change it any time from the home page.",
+    "Free delivery kicks in at ₹500."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "See the menu",
+     "menu.html"
+    ],
+    [
+     "Go to cart",
+     "cart.html"
+    ]
+   ]
+  },
+  {
+   "id": "payments",
+   "title": "Coupons & payments",
+   "emoji": "💳",
+   "c1": "#f5b301",
+   "c2": "#ff6b35",
+   "intro": "Everything about prices, offers and how to pay.",
+   "body": [
+    {
+     "h": "Coupons",
+     "p": "FLAVOUR10 gives 10% off, up to ₹200. WELCOME50 gives ₹50 off orders above ₹300. Enter the code in your cart and press Apply."
+    },
+    {
+     "h": "How to pay",
+     "p": "Pay by cash, UPI or card on delivery or at the counter. Online payment isn't available yet."
+    },
+    {
+     "h": "Prices",
+     "p": "All prices are in rupees. The final total is calculated by our server, so it always matches what you see at checkout."
+    }
+   ],
+   "tips": [
+    "Only one coupon works per order.",
+    "Delivery is free above ₹500."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "Go to cart",
+     "cart.html"
+    ]
+   ]
+  },
+  {
+   "id": "diet",
+   "title": "Menu, diet & allergies",
+   "emoji": "🥗",
+   "c1": "#22c55e",
+   "c2": "#14d9b5",
+   "intro": "Find dishes that suit your diet and spice level.",
+   "body": [
+    {
+     "h": "Veg, egg and non-veg",
+     "p": "Every dish has a coloured square: green for vegetarian, amber for contains egg, red for non-veg. Tick Veg only on the menu to filter."
+    },
+    {
+     "h": "Spice levels",
+     "p": "One to three chillies show how spicy a dish is. Ask us to adjust it in the order notes."
+    },
+    {
+     "h": "Allergies",
+     "p": "Each dish page lists every ingredient. Please tell us about nut, dairy, gluten or shellfish allergies in the notes before you order."
+    },
+    {
+     "h": "Find dishes by ingredient",
+     "p": "The Ingredient finder lets you tick what you have at home and shows what you can cook."
+    }
+   ],
+   "tips": [
+    "Use the price filter to stay on budget.",
+    "Sort by Top rated to see what guests love."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "Open the menu",
+     "menu.html"
+    ],
+    [
+     "Ingredient finder",
+     "ingredients.html"
+    ]
+   ]
+  },
+  {
+   "id": "reviews",
+   "title": "Reviews & privacy",
+   "emoji": "⭐",
+   "c1": "#ff2e7e",
+   "c2": "#f5b301",
+   "intro": "How reviews work, and how we treat your details.",
+   "body": [
+    {
+     "h": "Leave a review any time",
+     "p": "Open Kind Words, choose a star rating, write a few lines and post. You can review as often as you like."
+    },
+    {
+     "h": "Verified badge",
+     "p": "Add your order or booking reference and email to get a Verified badge on your review."
+    },
+    {
+     "h": "Your data",
+     "p": "We store only what you enter in our forms (name, email, phone, address) so we can serve you. Your details are also remembered in your own browser to fill forms faster. We never share them."
+    }
+   ],
+   "tips": [
+    "Helpful votes push useful reviews up.",
+    "Be specific: mention the dish and what you liked."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "Read reviews",
+     "reviews.html"
+    ],
+    [
+     "Write a review",
+     "reviews.html#write"
+    ]
+   ]
+  },
+  {
+   "id": "visit",
+   "title": "Hours & location",
+   "emoji": "📍",
+   "c1": "#14d9b5",
+   "c2": "#2f8bff",
+   "intro": "When we're open and how to reach us.",
+   "body": [
+    {
+     "h": "Opening hours",
+     "p": "Monday to Friday 12:00 to 22:00, Saturday 11:00 to 23:00, Sunday 11:00 to 21:00."
+    },
+    {
+     "h": "Find us",
+     "p": "123 Spice Street, Bengaluru (replace with your address). You can open the location in Maps from the Contact page."
+    },
+    {
+     "h": "Get in touch",
+     "p": "Use the Contact form for questions, collaborations and press. We reply by email."
+    }
+   ],
+   "tips": [
+    "Book ahead on Friday and Saturday evenings."
+   ],
+   "dishes": [],
+   "links": [
+    [
+     "Contact us",
+     "contact.html"
+    ]
+   ]
+  }
+ ]
+}

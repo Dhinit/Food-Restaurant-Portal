@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Topic | Flavour Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head><body><main id="pg"><div class="wrap ph" id="t"></div></main><script src="site.js"></script><script>
+(async()=>{const q=new URLSearchParams(location.search),s=q.get("s")==="know"?"know":"cook",id=q.get("id"),el=$("#t");
+ try{const C=await(await fetch("/api/content")).json(),L=C[s],i=L.findIndex(x=>x.id===id);if(i<0)throw 0;
+  const t=L[i],prev=L[i-1],next=L[i+1],sec=s==="cook"?["How I Cook","cook.html"]:["Good to Know","faq.html"];document.title=t.title+" | Flavour Lab";
+  const ds=await getDishes(),rel=(t.dishes||[]).map(x=>ds.find(d=>d.id===x)).filter(Boolean);
+  el.innerHTML=`<a class="crumb" href="${sec[1]}">← ${sec[0]}</a>
+  <div class="th" style="--a:${t.c1};--b:${t.c2}"><em>${t.emoji}</em><div><h1>${esc(t.title)}</h1><p>${esc(t.intro)}</p></div></div>
+  <div style="--a:${t.c1};--b:${t.c2}">${t.body.map((b,n)=>`<h2 class="ts"><i>${n+1}</i>${esc(b.h)}</h2><p class="tp">${esc(b.p)}</p>`).join("")}</div>
+  ${t.tips&&t.tips.length?`<div class="tipbox"><h3>💡 Quick tips</h3><ul>${t.tips.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+  ${t.links&&t.links.length?`<div class="ext">${t.links.map(([a,h],n)=>`<a class="btn ${n?"ghost":""}" href="${h}">${esc(a)} →</a>`).join("")}</div>`:""}
+  ${rel.length?`<h2 style="margin:2.5rem 0 1rem">Try it in these <span class="grad">dishes</span></h2><div class="grid">${rel.map(cardHTML).join("")}</div>`:""}
+  <div class="pn">${prev?`<a href="topic.html?s=${s}&id=${prev.id}"><small>← Previous</small><b>${prev.emoji} ${esc(prev.title)}</b></a>`:"<span></span>"}${next?`<a href="topic.html?s=${s}&id=${next.id}" style="text-align:right"><small>Next →</small><b>${next.emoji} ${esc(next.title)}</b></a>`:"<span></span>"}</div>
+  <h2 style="margin:2rem 0 1rem">More from <span class="grad">${sec[0]}</span></h2><div class="tcs">${L.filter(x=>x.id!==id).slice(0,4).map(x=>tc(s,x)).join("")}</div>`;
+  watch();
+ }catch{el.innerHTML='<h1>Topic not found</h1><p class="lead">Go back to <a class="link" href="cook.html">How I Cook</a> or <a class="link" href="faq.html">Good to Know</a>.</p>'}})();</script></body></html>
